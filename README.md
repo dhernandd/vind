@@ -16,6 +16,10 @@ In addition, up-to-date versions of numpy, scipy and matplotlib are expected.
 
 # Usage
 
-Firing `python runner.py` should work right off the bat. The code will find a two dimensional encoding and dynamical system describing the provided Gaussian data. A figure is provided with the original dynamical system and simulated trajectories that can be compared with the resulting fit. The hyperparameter 'plot2D', default-set to True, will produce these path+dynamics plots automatically for 2D latent spaces.
+Firing `python runner.py` works right off the bat. The code will find a two dimensional encoding and dynamical system describing the provided Gaussian data. A figure is provided with the original dynamical system and simulated trajectories that can be compared with the resulting fit. The hyperparameter `plot2D`, default-set to `True`, will produce these path+dynamics plots automatically for 2D latent spaces.
 
+# TODO
 
+* Work on this README
+* Make this implementation more lightweight, currently it still includes a bunch of developer features unnecessary for a first take.
+* Make a demonstration notebook
