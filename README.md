@@ -2,7 +2,9 @@
 
 This code is a basic implementation in tensorflow, of the paper "[Variational Inference for Nonlinear Dynamics](https://github.com/dhernandd/vind/blob/master/paper/nips_workshop.pdf)", accepted for the Time Series Workshop at NIPS 2017. It represents a sequential variational autoencoder that is able to infer nonlinear dynamics in the latent space. The training algorithm makes use of a novel, two-step technique for optimization based on the [Fixed Point Iteration](https://en.wikipedia.org/wiki/Fixed-point_iteration) method for finding fixed points of iterative equations.
 
-<img src="https://github.com/dhernandd/vind/blob/master/data/gaussian/quiver_plot.png" width="400" height="400" />
+| Original | Inferred |
+|-----------|----------|
+|<img src="https://github.com/dhernandd/vind/blob/master/data/gaussian/quiver_plot.png" width="400" height="400" /> | <img src="https://github.com/dhernandd/vind/blob/master/data/gaussian/qplot260.png" width="400" height="400" /> |
 
 
 # Installation
