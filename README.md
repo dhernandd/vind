@@ -4,7 +4,7 @@ This code is a basic implementation in tensorflow, of the paper "[Variational In
 
 | Original | Inferred |
 |-----------|----------|
-|<img src="https://github.com/dhernandd/vind/blob/master/data/gaussian/quiver_plot.png" width="400" height="400" /> | <img src="https://github.com/dhernandd/vind/blob/master/data/gaussian/qplot260.png" width="400" height="400" /> |
+|<img src="https://github.com/dhernandd/vind/blob/master/data/gaussian/quiver_plot.png" width="100%" /> | <img src="https://github.com/dhernandd/vind/blob/master/data/gaussian/qplot260.png" width="100%" /> |
 
 
 # Installation
