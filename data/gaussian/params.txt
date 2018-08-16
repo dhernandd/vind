@@ -1,0 +1,27 @@
+alpha 0.5
+draw_heat_maps True
+genNTbins 30
+genNsamps 100
+gen_mod_class Gaussian
+init_Q 2.0
+init_Q0 1.0
+initbias_Goutmean 1.0
+initrange_B 3.0
+initrange_Goutmean 0.03
+initrange_Goutvar 0.1
+initrange_LambdaX 1.0
+initrange_MuX 0.2
+initrange_outY 3.0
+is_py2 True
+lat_mod_class llinear
+learning_rate 0.002
+load_data_file 
+local_data_dir /Users/danielhernandez/work/supervind/data/
+local_rlt_dir /Users/danielhernandez/work/supervind/rslts/
+local_root /Users/danielhernandez/work/supervind/
+mode generate
+save_data_file datadict
+save_to_vind False
+this_data_dir gaussian001/
+xDim 2
+yDim 20
