@@ -1,0 +1,21 @@
+alpha 0.5
+data_dir data/
+draw_heat_maps True
+genNTbins 30
+genNsamps 100
+gen_mod_class Poisson
+init_Q 2.0
+init_Q0 1.0
+init_range_MuX 0.5
+initrange_B 4.0
+initrange_outY 3.0
+lat_mod_class llinear
+learning_rate 0.001
+load_data_file 
+local_root /Users/danielhernandez/work/supervind/
+mode generate
+save_data_file datadict
+save_to_vind False
+this_data_dir poisson002/
+xDim 2
+yDim 50
