@@ -237,7 +237,7 @@ class Optimizer_TS():
                     
                     sess.run([train_op], feed_dict=fd_batch)
                 t1 = time.time()
-                print('train/samp (s):', (t1 - t0)/Nsamps) 
+                print('time to train/samp (s):', (t1 - t0)/Nsamps) 
                 
             # Add some summaries
             cost, summaries = sess.run([self.cost, merged_summaries], feed_dict=fd_train)
@@ -253,7 +253,7 @@ class Optimizer_TS():
             print('')
             
             # Plot every 5 epochs for xDim = 2
-            if ep % 5 == 0 and self.xDim == 2:
+            if ep % 5 == 0 and self.xDim == 2 and params.plot2d:
                 if params.with_ids:
                     for ent in range(self.params.num_diff_entities):
                         print('Plottins DS for entity ', str(ent), '...')

@@ -96,7 +96,7 @@ NTBINS = 30
 NSAMPS = 200
 DRAW_HEAT_MAPS = False
 
-flags = tf.app.flags
+flags = tf.app.flags #@UndefinedVariable
 flags.DEFINE_string('mode', RUN_MODE, "The mode in which to run. Can be ['train', 'generate']")
 
 flags.DEFINE_string('local_root', LOCAL_ROOT, "The root directory of VIND.")
@@ -168,7 +168,7 @@ flags.DEFINE_boolean('with_mod_dynamics', WITH_MOD_DYNAMICS, "")
 flags.DEFINE_boolean('with_Iterm', WITH_ITERM, "")
 flags.DEFINE_boolean('include_with_inputs', INCLUDE_WITH_INPUTS, "")
 flags.DEFINE_integer('num_grad_steps', NUM_GRAD_STEPS, "")
-flags.DEFINE_integer('plot2d', PLOT2D, "")
+flags.DEFINE_boolean('plot2d', PLOT2D, "")
 
 
 flags.DEFINE_float('learning_rate', LEARNING_RATE, "It's the starting learning rate, silly")
