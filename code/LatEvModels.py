@@ -625,6 +625,4 @@ class LocallyLinearEvolution(NoisyEvolution):
         if draw_plots:
             self.plot_2Dquiver_paths(sess, Xdata_NxTxd, Xvar_name, with_inflow=with_inflow)
 
-        return Xdata_NxTxd        
-    
-        
+        return Xdata_NxTxd
