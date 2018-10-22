@@ -189,8 +189,8 @@ flags.DEFINE_boolean('with_Iterm', WITH_ITERM, "")
 flags.DEFINE_boolean('include_with_inputs', INCLUDE_WITH_INPUTS, "")
 
 flags.DEFINE_integer('num_grad_steps', NUM_GRAD_STEPS, "")
-flags.DEFINE_boolean('plot2d', PLOT2D, "")
-
+flags.DEFINE_boolean('plot2d', PLOT2D, "Plot the latent paths on top of the flow plot"
+                     "(only valid for latent space dimension 2")
 
 flags.DEFINE_string('opt_class', OPT_CLASS, "A string denoting the optimizer class. "
                     "One of ['ts']")
