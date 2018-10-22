@@ -117,11 +117,9 @@ class Optimizer_TS():
         Entropy = self.mrec.compute_Entropy(noisy_postX)
         
         checks = [LogDensity, Entropy]
-#         checks = [LogDensity]
         checks.extend(LDchecks)
         
-#         return -(LogDensity + Entropy), checks 
-        return -(LogDensity), checks 
+        return -(LogDensity + Entropy), checks 
 
     def train(self, sess, rlt_dir, datadict, num_epochs=2000):
         """
