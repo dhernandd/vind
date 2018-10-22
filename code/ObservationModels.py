@@ -105,9 +105,9 @@ class PoissonObs(ObsModel):
         Define the map lambda(x), the rate of the Poisson observations as
         a function of the latent state. 
         
-        If params.poisson_is_out_positive is positive, the output of the map is
+        If params.poisson_is_out_positive is True, the output of the map is
         positive definite through a softplus nonlinearity. Otherwise, an
-        exponential activation is applied.
+        exponential activation is applied to a linear layer
         """
         params = self.params
         if Input is None: Input = self.X
