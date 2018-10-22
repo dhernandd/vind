@@ -316,10 +316,10 @@ class NoisyEvolution():
             figsize (int, int):
             pause (bool):
             draw (bool):
-            with_inflow (bool)
-            new_fig (bool)
+            with_inflow (bool):
+            new_fig (bool):
             savefile:
-            Id (int)
+            Id (int):
         """
         import matplotlib.pyplot as plt
         if newfig:
@@ -514,7 +514,8 @@ class LocallyLinearEvolution(NoisyEvolution):
             LatentDensity: The latent density.
             
             checks: Individual terms forming the latent density. This is useful
-                to micromanage the training algorithm.
+                to micromanage the training algorithm, catch difficult bugs, and
+                generally better understand what's going on. 
         """
         xDim = self.xDim
         X_NxTxd = self.X if X is None else X
@@ -570,7 +571,8 @@ class LocallyLinearEvolution(NoisyEvolution):
             path_mse_threshold (float): minimum length of the sampled path. If
                 the path is shorter than this, it is discarded and resampled.
                 This avoids sampling paths that start close to a fixed point and
-                remain there.
+                remain there. Lower this parameter to keep some paths close to
+                the trivial trajectories X = const
             draw_plots (bool):
             init_variables (bool):
             num_ids (int)
@@ -594,8 +596,6 @@ class LocallyLinearEvolution(NoisyEvolution):
         for samp in range(Nsamps):
             samp_norm = 0.0 # needed to avoid paths that start too close to an attractor
             
-            # lower path_mse_threshold to keep paths closer to trivial
-            # trajectories, x = const.
             this_id = random.randint(1, num_ids)
             while samp_norm < path_mse_threshold:
                 X_single_samp_1xTxd = np.zeros([1, NTbins, self.xDim])
