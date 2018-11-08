@@ -165,10 +165,15 @@ flags.DEFINE_float('initbias_Goutmean', INITBIAS_GOUTMEAN, "Controls the bias ad
                    "Generative Network in the case of Gaussian observations")
 flags.DEFINE_float('initrange_outY', POISSON_INITRANGE_OUTY, "Controls the initial "
                    "range of the output of the Poisson generative network")
-flags.DEFINE_boolean('poisson_is_out_positive', POISSON_IS_OUT_POSITIVE, "")
-flags.DEFINE_float('poisson_inv_tau', POISSON_INV_TAU, "")
-flags.DEFINE_boolean('is_linear_output', IS_LINEAR_OUTPUT, "")
-flags.DEFINE_boolean('is_identity_output', IS_IDENTITY_OUTPUT, "")
+flags.DEFINE_boolean('poisson_is_out_positive', POISSON_IS_OUT_POSITIVE, "Deprecated. "
+                     "The output of the Generative Model with Poisson observations "
+                     "is positive definite. To be removed soon.")
+flags.DEFINE_float('poisson_inv_tau', POISSON_INV_TAU, "Deprecated. Rate for the output "
+                   "exponential nonlinearity in the Poisson observation model.")
+flags.DEFINE_boolean('is_linear_output', IS_LINEAR_OUTPUT, "Is the output a simple linear "
+                     "transformation of the hidden state?")
+flags.DEFINE_boolean('is_identity_output', IS_IDENTITY_OUTPUT, "Is the output equal "
+                     "to the hidden state?")
 
 flags.DEFINE_boolean('with_ids', WITH_IDS, "Does the data include known Ids for the "
                      "different trials (e.g. cell types)")

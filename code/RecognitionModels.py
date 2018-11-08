@@ -216,8 +216,8 @@ class SmoothingNLDSTimeSeries(GaussianRecognition):
         Q0QInv_Tm1xdxd = tf.concat([Q0Inv_1xdxd, QInvs_Tm2xdxd], axis=0)
         QInvsTot_NTm1xdxd = tf.tile(Q0QInv_Tm1xdxd, [Nsamps, 1, 1])
 
-        # The diagonal blocks of Omega(z) up to T-1:
-        #     Omega(z)_ii = A(z)^T*Qq^{-1}*A(z) + Qt^{-1},     for i in {1,...,T-1 }
+        # The diagonal blocks of K(z) up to T-1:
+        #     K(z)_ii = A(z)^T*Qq^{-1}*A(z) + Qt^{-1},     for i in {1,...,T-1 }
         use_tt = self.params.use_transpose_trick
         AQInvsA_NTm1xdxd = (tf.matmul(A_NTm1xdxd, 
                                       tf.matmul(QInvs_NTm1xdxd, A_NTm1xdxd,
@@ -226,8 +226,8 @@ class SmoothingNLDSTimeSeries(GaussianRecognition):
         AQInvsA_NxTm1xdxd = tf.reshape(AQInvsA_NTm1xdxd,
                                        [Nsamps, NTbins-1, xDim, xDim])                                     
         
-        # The off-diagonal blocks of Omega(z):
-        #     Omega(z)_{i,i+1} = -A(z)^T*Q^-1,     for i in {1,..., T-2}
+        # The off-diagonal blocks of K(z):
+        #     K(z)_{i,i+1} = -A(z)^T*Q^-1,     for i in {1,..., T-2}
         AQInvs_NTm1xdxd = -tf.matmul(A_NTm1xdxd, QInvs_NTm1xdxd,  #pylint: disable=invalid-unary-operand-type
                                      transpose_a=use_tt)  
         
@@ -241,7 +241,7 @@ class SmoothingNLDSTimeSeries(GaussianRecognition):
         AA_NxTxdxd = Lambda_NxTxdxd + AQInvsAQInv_NxTxdxd
         BB_NxTm1xdxd = tf.reshape(AQInvs_NTm1xdxd, [Nsamps, NTbins-1, xDim, xDim])        
         
-        # Computethe Cholesky decomposition for the total precision matrix
+        # Compute the Cholesky decomposition for the total precision matrix
         aux_fn1 = lambda _, seqs : blk_tridiag_chol(seqs[0], seqs[1])
         TheChol_2xxNxTxdxd = tf.scan(fn=aux_fn1, 
                                      elems=[AA_NxTxdxd, BB_NxTm1xdxd],
@@ -434,4 +434,3 @@ class SmoothingNLDSTimeSeries(GaussianRecognition):
         Get the latent evolution model that the Generative Model should use.
         """
         return self.lat_ev_model
-    
